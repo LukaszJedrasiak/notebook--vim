@@ -2,3 +2,4 @@
 [[editors]]
 [[advantages]]
 [[configuration]]
+[[plugins]]

@@ -4,4 +4,5 @@
 - Emmet
 
 ## others
-- vimwiki
+### taking notes
+- vim-markdown

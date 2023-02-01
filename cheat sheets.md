@@ -1,1 +1,0 @@
-[[https://vim.rtorr.com/]]

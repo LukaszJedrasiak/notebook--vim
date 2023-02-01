@@ -1,6 +1,6 @@
 [commands](commands)
-[[learning]]
-[[editors]]
-[[advantages]]
-[[configuration]]
+[learning](learning)
+[editors](editors)
+[advantages](advantages)
+[configuration](configuration)
 [plugins](plugins)

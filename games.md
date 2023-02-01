@@ -1,1 +1,1 @@
-[[https://vim-adventures.com/]]
+[vim adventures](https://vim-adventures.com/)

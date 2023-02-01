@@ -1,4 +1,4 @@
-[[cheat sheets]]
-[[games]]
-[[tutorials]]
-[[books]]
+[cheat sheets](cheat-sheets)
+[games](games)
+[tutorials](tutorials)
+[books](books)

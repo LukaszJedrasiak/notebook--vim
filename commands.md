@@ -26,11 +26,14 @@ Examples:
 
 - <kbd>%</kbd> - move cursor to the matching parenthesis or bracket
 
-### insert text
+## insert text
 - <kbd>i</kbd> - insert text **before** cursor
 - <kbd>a</kbd> - insert text **after** cursor (append)
 - <kbd>I</kbd> - insert text at the beginning of the line
 - <kbd>A</kbd> - insert text at the end of the line (append)
+
+- <kbd>o</kbd> - put new line below and turn into INSERT mode
+- <kbd>O</kbd> - put a new line above and turn into INSERT mode
 
 ## search
 
@@ -49,6 +52,13 @@ Examples:
 - `:%s/{old}/{new}/g` - replace all occurences of {old} phrase by {new} in the whole file
 - `:%s/{old}/{new}/gc` - replace all occurences of {old} phrase by {new} in the whole file, with a prompt whether to substitute or not
 
+### search options
+- `:set ic` - turn on case insensitive during followin searching (ignore case)
+- `:set noic` - turn off case insensitive during following searching
+- `:set hlsearch` - turn on highlighting all searching matches
+- `:set nohlsearch` - turn off highlighting all searching matches
+- `/{phrase}/c` - ignore case only for this search
+
 ## edit
 Pattern:
 ``[counter] {operator} [motion]``
@@ -65,7 +75,8 @@ Pattern:
 - <kbd>dd</kbd> - delete whole line
 
 ### replace text
-- <kbd>r_</kbd> - replace the current char with the _ character
+- <kbd>r</kbd> {char} - replace the current single char with the {char}
+- <kbd>R</kbd> {chars} - replace the following multiple chars with the {chars} 
 - <kbd>s</kbd> - delete current char and turn on INSERT mode
 - <kbd>ce</kbd> or <kbd>cw</kbd> - delete word from cursor to the end and turn on INSERT mode
 - <kbd>cc</kbd> - delete whole line and turn on INSERT mode
@@ -74,10 +85,15 @@ Pattern:
 ### edit text
 - <kbd>x</kbd> - delete character under the cursor
 
+### copy text
+- <kbd>y</kbd> - copy text - highlighted in VISUAL mode or according to [motion] (yank)
+- <kbd>yw</kbd> - copy one word
+- <kbd>yy</kbd> - copy the whole line
+
 ### paste text
 - <kbd>p</kbd> - paste the copied or deleted text **after** the cursor or in the new line if line is copied (put)
 
-### files
+## files
 - <kbd>:q</kbd> - close the file, fails if changes are not saved (quit)
 - <kbd>:q!</kbd> - close the file, without saving changes
 - <kbd>:qa</kbd> - close all the files, fails if changes are not saved
@@ -95,7 +111,7 @@ Pattern:
 
 > You can paste to file an output of external command, i.e. <kbd>:r !ls</kbd>
 
-### external commands
+## external commands
 - <kbd>:!{command}</kbd> - execute external shell command
 
 Example:

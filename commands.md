@@ -94,26 +94,31 @@ Pattern:
 - <kbd>p</kbd> - paste the copied or deleted text **after** the cursor or in the new line if line is copied (put)
 
 ## files
-- <kbd>:q</kbd> - close the file, fails if changes are not saved (quit)
-- <kbd>:q!</kbd> - close the file, without saving changes
-- <kbd>:qa</kbd> - close all the files, fails if changes are not saved
-- <kbd>:qa!</kbd> - close all the files, without saving changes
+- `:q` - close the file, fails if changes are not saved (quit)
+- `:q!` - close the file, without saving changes
+- `:qa` - close all the files, fails if changes are not saved
+- `:qa!` - close all the files, without saving changes
 
-- <kbd>:w</kbd> - save the changes in current file (write)
-- <kbd>:wa</kbd> - save the changes in all files
-- <kbd>:wq</kbd> - save the changes and close the file
-- <kbd>:wqa</kbd> - save the changes and close all files
-- <kbd>w</kbd> {FILENAME} - save file under given {FILENAME}
+- `:w` - save the changes in current file (write)
+- `:wa` - save the changes in all files
+- `:wq` - save the changes and close the file
+- `:wqa` - save the changes and close all files
+- `:w {FILENAME}` - save file under given {FILENAME}
 
 > You can write a part of file selected via VISUAL mode
 
-- <kbd>:r</kbd> {FILENAME} - put a content of other file under the cursor (retrieve)
+- `:r {FILENAME}` - put a content of other file under the cursor (retrieve)
 
 > You can paste to file an output of external command, i.e. <kbd>:r !ls</kbd>
 
+## console commands
+- `:help` - help
+- `:help {command}` - help about {command}
+- `{command}` <kbd>Ctrl</kbd>+<kbd>D</kbd> - autocomplete {command}
+
 ## external commands
-- <kbd>:!{command}</kbd> - execute external shell command
+- `:!{command}` - execute external shell command
 
 Example:
-- <kbd>:!ls</kbd> - list the current directory content
+- `:!ls` - list the current directory content
 

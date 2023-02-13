@@ -1,5 +1,7 @@
 # NORMAL mode
 
+- <kbd>.</kbd> - repeat the last command
+
 ## motion
 
 > word vs. WORD
@@ -97,6 +99,17 @@ Examples:
 Pattern:
 ``[counter] {operator} [motion]``
 
+Pattern explanation:
+- The **operator** determines which action you want to perform: deleting, changing, yanking, formatting, etc.
+- The **counter** allows you to multiply the effect of an operator by performing an action a _counter_ number of times.
+- The **motion** represents the piece of text to which to apply the action defined by the operator.
+
+Examples:
+- <kbd>5dj</kbd> - delete 5 lines downwards
+- <kbd>df'</kbd> - delete everything in the current line from the cursor until the first occurence of the <kbd>'</kbd> character (including the character itself)
+- <kbd>dt'</kbd> - delete everything in the current line from the cursor until just before the first occurence of the <kbd>'</kbd> character
+- <kbd>ggdG</kbd> - delete the whole document
+
 ### changes
 - <kbd>u</kbd> - undo the last action
 - <kbd>U</kbd> - undo all changes on the line
@@ -107,25 +120,63 @@ Pattern:
 - <kbd>de</kbd> - detele text to the end od current word, **including** its last character
 - <kbd>d$</kbd> - delete text till the end of the line, **including** the last character
 - <kbd>dd</kbd> - delete whole line
+- <kbd>D</kbd> - delete text until the end of the line
+- <kbd>x</kbd> or <kbd>dl</kbd> - delete the character under the cursor
+- <kbd>X</kbd> or <kbd>dh</kbd> - delete the character before the cursor
 
 ### replace text
 - <kbd>r</kbd> {char} - replace the current single char with the {char}
 - <kbd>R</kbd> {chars} - replace the following multiple chars with the {chars} 
-- <kbd>s</kbd> - delete current char and turn on INSERT mode
+- <kbd>s</kbd> or <kbd>ch</kbd> - delete current char and turn on INSERT mode
+- <kbd>c{motion}</kbd> - delete a piece of text (determined by {motion}) and turn on INSERT mode
+- <kbd>C</kbd> - delete a text until the end of the line and turn on INSERT mode
 - <kbd>ce</kbd> or <kbd>cw</kbd> - delete word from cursor to the end and turn on INSERT mode
 - <kbd>cc</kbd> - delete whole line and turn on INSERT mode
 - <kbd>c$</kbd> - delete text till the end of the line and turn on INSERT mode
 
-### edit text
-- <kbd>x</kbd> - delete character under the cursor
+### format text
+- <kbd>g~</kbd> - change letters from lowercase to uppercase and back (switch case)
+- <kbd>gu</kbd> - make characters lowercase
+- <kbd>gU</kbd> - make characters uppercase
+- <kbd>>></kbd> - add indentation
+- <kbd><<</kbd> - remove indentation
+- <kbd>=</kbd> - formats code (???)
 
 ### copy text
 - <kbd>y</kbd> - copy text - highlighted in VISUAL mode or according to [motion] (yank)
 - <kbd>yw</kbd> - copy one word
 - <kbd>yy</kbd> - copy the whole line
+- <kbd>Y</kbd> - copy the whole line
 
 ### paste text
-- <kbd>p</kbd> - paste the copied or deleted text **after** the cursor or in the new line if line is copied (put)
+- <kbd>p</kbd> - paste the copied or deleted text **after** the cursor or in the new line **below** if line is copied (put)
+- <kbd>P</kbd> - paste the copied or deled text **before** the cursor or in the new line **above** if line is copied
+
+## text objects
+Pattern:
+``{selector}{text-object-id}``
+
+Selectors:
+- <kbd>i</kbd> - inner: text object without whitespace (inside object-id)
+- <kbd>a</kbd> - arount: text object with whitespace (around object-id)
+
+Object ids:
+- <kbd>w</kbd> - word
+- <kbd>s</kbd> - sentence
+- <kbd>p</kbd> - paragraph
+- <kbd>b</kbd> or <kbd>(</kbd> - block surrounded by ()
+- <kbd>B</kbd> or <kbd>{</kbd> - block surrounded by {}
+- <kbd><</kbd> or <kbd>></kbd> - block surrounded by <>
+- <kbd>[</kbd> or <kbd>]</kbd> - block surrounded by []
+- <kbd>t</kbd> - tag (i.e. HTML tag)
+
+Examples:
+- <kbd>daw</kbd> - delete a word + whitespaces
+- <kbd>das</kbd> - delete a sentence
+- <kbd>dis</kbd> - delete inner sentence
+- <kbd>da"</kbd> - delete text in double quotes including the quotes
+- <kbd>di"</kbd> - delete text in double quotes excluding the quotes
+
 
 ## files
 - `:q` - close the file, fails if changes are not saved (quit)

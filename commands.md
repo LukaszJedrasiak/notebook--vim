@@ -18,8 +18,11 @@ Pattern:
 ### moving cursor
 - <kbd>h</kbd> - move cursor left
 - <kbd>l</kbd> - move cursor right
-- <kbd>j</kbd> - move cursor down
-- <kbd>k</kbd> - move cursor up
+- <kbd>j</kbd> - move cursor line down
+- <kbd>k</kbd> - move cursor line up
+
+- <kbd>gj</kbd> - move cursor line down (including wrapped lines)
+- <kbd>gk</kbd> - move cursor line up (including wrapped lines)
 
 - <kbd>w</kbd> - move cursor to the first character of next word
 - <kbd>W</kbd> - move cursor to the first character of next WORD
@@ -120,6 +123,8 @@ Examples:
 - <kbd>de</kbd> - detele text to the end od current word, **including** its last character
 - <kbd>d$</kbd> - delete text till the end of the line, **including** the last character
 - <kbd>dd</kbd> - delete whole line
+- <kbd>dt{char}</kbd> - delete text until {char}
+- <kbd>d/{phrase}</kbd> - delete text until {phrase}
 - <kbd>D</kbd> - delete text until the end of the line
 - <kbd>x</kbd> or <kbd>dl</kbd> - delete the character under the cursor
 - <kbd>X</kbd> or <kbd>dh</kbd> - delete the character before the cursor
@@ -133,6 +138,7 @@ Examples:
 - <kbd>ce</kbd> or <kbd>cw</kbd> - delete word from cursor to the end and turn on INSERT mode
 - <kbd>cc</kbd> - delete whole line and turn on INSERT mode
 - <kbd>c$</kbd> - delete text till the end of the line and turn on INSERT mode
+- <kbd>ct{char}</kbd> - delete text until {char} and turn on INSERT mode
 
 ### format text
 - <kbd>g~</kbd> - change letters from lowercase to uppercase and back (switch case)
@@ -154,11 +160,14 @@ Examples:
 
 ## text objects
 Pattern:
-``{selector}{text-object-id}``
+``{operator}{selector}{text-object-id}``
+
+> Operators with text objects apply to the whole text object regardless of where the cursor is located inside this object.
+> Quotes text objects (surrounded by "'\`) have seeking forward behaviour, so the command can be execute even outside (before) the object. This feature is not supported yet for the other objects, such as parentheses objects (surrounded by [{(). 
 
 Selectors:
 - <kbd>i</kbd> - inner: text object without whitespace (inside object-id)
-- <kbd>a</kbd> - arount: text object with whitespace (around object-id)
+- <kbd>a</kbd> - around: text object with whitespace (around object-id)
 
 Object ids:
 - <kbd>w</kbd> - word
@@ -176,6 +185,9 @@ Examples:
 - <kbd>dis</kbd> - delete inner sentence
 - <kbd>da"</kbd> - delete text in double quotes including the quotes
 - <kbd>di"</kbd> - delete text in double quotes excluding the quotes
+
+- <kbd>ciw</kbd>change word (cursor can be anywhere in the word)
+- <kbd>cit</kbd>change text inside tags (cursor can be anywhere in the tag)
 
 
 ## files

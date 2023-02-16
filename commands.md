@@ -1,5 +1,8 @@
 # NORMAL mode
 
+- <kbd>Esc</kbd> - back to NORMAL mode
+- <kbd>Ctrl</kbd>+<kbd>c</kbd> - back to NORMAL mode
+- <kbd>Ctrl</kbd>+<kbd>[</kbd> - back to NORMAL mode
 - <kbd>.</kbd> - repeat the last command
 
 ## motion
@@ -69,6 +72,13 @@ Examples:
 
 - <kbd>o</kbd> - put new line below and turn into INSERT mode
 - <kbd>O</kbd> - put a new line above and turn into INSERT mode
+
+- <kbd>gi</kbd> - insert text at the last place you left INSERT mode (last change in VSC) and turn on INSERT mode
+
+### changes
+- <kbd>Ctrl</kbd>+<kbd>h</kbd> - delete the **last character** typed
+- <kbd>Ctrl</kbd>+<kbd>w</kbd> - delete the **last word** typed
+- <kbd>Ctrl</kbd>+<kbd>u</kbd> - delete the **last line** typed
 
 ## search
 

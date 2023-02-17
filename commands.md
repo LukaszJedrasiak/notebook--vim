@@ -75,11 +75,6 @@ Examples:
 
 - <kbd>gi</kbd> - insert text at the last place you left INSERT mode (last change in VSC) and turn on INSERT mode
 
-### changes
-- <kbd>Ctrl</kbd>+<kbd>h</kbd> - delete the **last character** typed
-- <kbd>Ctrl</kbd>+<kbd>w</kbd> - delete the **last word** typed
-- <kbd>Ctrl</kbd>+<kbd>u</kbd> - delete the **last line** typed
-
 ## search
 
 ### searching
@@ -185,7 +180,7 @@ Object ids:
 - <kbd>p</kbd> - paragraph
 - <kbd>b</kbd> or <kbd>(</kbd> - block surrounded by ()
 - <kbd>B</kbd> or <kbd>{</kbd> - block surrounded by {}
-- <kbd><</kbd> or <kbd>></kbd> - block surrounded by <>
+- <kbd>/<</kbd> or <kbd>></kbd> - block surrounded by /</>
 - <kbd>[</kbd> or <kbd>]</kbd> - block surrounded by []
 - <kbd>t</kbd> - tag (i.e. HTML tag)
 
@@ -229,3 +224,19 @@ Examples:
 Example:
 - `:!ls` - list the current directory content
 
+# INSERT mode
+## changes
+- <kbd>Ctrl</kbd>+<kbd>h</kbd> - delete the **last character** typed
+- <kbd>Ctrl</kbd>+<kbd>w</kbd> - delete the **last word** typed
+- <kbd>Ctrl</kbd>+<kbd>u</kbd> - delete the **last line** typed
+
+# VISUAL mode
+- <kbd>v</kbd> - turn on **character-wise** visual mode
+- <kbd>V</kbd> - turn on **line-wise** visual mode
+- <kbd>Ctrl</kbd>+<kbd>v</kbd> - turn on **block-wise** visual mode
+
+Pattern:
+``{trigger}{counter}{motion}{operator}``
+
+Example:
+- <kbd>Vjd</kbd> - delete two lines

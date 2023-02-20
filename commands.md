@@ -103,6 +103,10 @@ Examples:
 - `:set nohlsearch` - turn off highlighting all searching matches
 - `/{phrase}/c` - ignore case only for this search
 
+### to be done
+- <kbd>gn</kbd> - ???
+- <kbd>gN</kbd> - ???
+
 ## edit
 Pattern:
 ``[counter] {operator} [motion]``

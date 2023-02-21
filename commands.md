@@ -162,10 +162,36 @@ Examples:
 - <kbd>yw</kbd> - copy one word
 - <kbd>yy</kbd> - copy the whole line
 - <kbd>Y</kbd> - copy the whole line
+- <kbd>yl</kbd> - yank one character
+- <kbd>yaw</kbd> - yank a word
+- <kbd>yas</kbd> - yank a sentence
+- <kbd>yi(</kbd> - yank everyting inside parentheses
 
 ### paste text
 - <kbd>p</kbd> - paste the copied or deleted text **after** the cursor or in the new line **below** if line is copied (put)
 - <kbd>P</kbd> - paste the copied or deled text **before** the cursor or in the new line **above** if line is copied
+- <kbd>gp</kbd> - paste after the cursor and put cursor **after** the pasted selection
+- <kbd>gP</kbd> - paste before the cursor and put cursor **after** the pasted selection
+
+Useful commands:
+- <kbd>yyp</kbd> - duplicate a line below
+- <kbd>yyP</kbd> - duplicate a line above
+- <kbd>ddp</kbd> - swap lines
+- <kbd>{counter}yyp</kbd> - copy the {counter} lines and paste them below
+- <kbd>yy{counter}p</kbd> - copy the line and paste it {counter} times below
+
+## registers
+- `"` - **unnamed** and default register for copying and cutting
+- `a-z` - **named** registers which you may explicitly choose before copying and cutting
+- `0` - **yank** register to store the last yanked thing
+- `1-9` - **cut** registers to store the last 9 things cutted (d) or changed (c)
+
+### usage
+`<kbd>"</kbd>{name of register}{y | d | c}{motion}`
+
+### preview of the content
+- `:reg` - preview of all registers
+- `:reg {name of register}` - previev of choosen register
 
 ## text objects
 Pattern:
@@ -233,6 +259,15 @@ Example:
 - <kbd>Ctrl</kbd>+<kbd>h</kbd> - delete the **last character** typed
 - <kbd>Ctrl</kbd>+<kbd>w</kbd> - delete the **last word** typed
 - <kbd>Ctrl</kbd>+<kbd>u</kbd> - delete the **last line** typed
+
+## paste
+Pattern:
+<kbd>Ctrl</kbd>+<kbd>R</kbd>{register}
+
+Examples:
+- <kbd>Ctrl-R "</kbd> - paste the content of the unnamed register
+- <kbd>Ctrl-R a</kbd> - paste the content of the 'a' register
+- <kbd>Ctrl-R 0</kbd> - paste the content of the yank register
 
 # VISUAL mode
 - <kbd>v</kbd> - turn on **character-wise** visual mode

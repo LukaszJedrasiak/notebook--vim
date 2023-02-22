@@ -186,8 +186,10 @@ Useful commands:
 - `0` - **yank** register to store the last yanked thing
 - `1-9` - **cut** registers to store the last 9 things cutted (d) or changed (c)
 
+> TO DO: registers in VSC that allows you to copy/paste content from clipboard
+
 ### usage
-`<kbd>"</kbd>{name of register}{y | d | c}{motion}`
+`<kbd>"</kbd>{name of register}{y | d | c | p}{motion}`
 
 ### preview of the content
 - `:reg` - preview of all registers

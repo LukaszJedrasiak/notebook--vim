@@ -90,6 +90,9 @@ Examples:
 - <kbd>#</kbd> - search the word under cursor backward
 
 ### substitute
+Pattern:
+`:[range]s/{pattern}/{substitute}/{flags}
+
 - `:s/{old}/{new}` - replace the first occurence in line of {old} phrase by {new}
 - `:s/{old}/{new}/g` - replace all occurences in line of {old} phrase by {new}
 - `:{a},{b}s/{old}/{new}/g` - replace all occurences of {old} phrase by {new} between line {a} and {b}
@@ -248,7 +251,21 @@ Examples:
 ## console commands
 - `:help` - help
 - `:help {command}` - help about {command}
+- `:edit {relative-path}` - open or create new file
+- `:e {relative-path}` - shorthand of above command
+- `:write` / `:w` - save a file
+- `:quit` / `:q` - close a file
+- `:{command}!` - force {command}
 - `{command}` <kbd>Ctrl</kbd>+<kbd>D</kbd> - autocomplete {command}
+
+Examples:
+- `:colorcheme {space}` <kbd>Ctrl</kbd>+<kbd>D</kbd> - show list of available color schemes
+- `:colo {space}` <kbd>Ctrl</kbd>+<kbd>D</kbd> - shorthand of above command
+- `:wq` - save and close the file
+- `:wa` - save all filles
+- `:qa` - close all files
+- `:wqa` - save and close all files
+- `:qa` - close all files without saving
 
 ## external commands
 - `:!{command}` - execute external shell command

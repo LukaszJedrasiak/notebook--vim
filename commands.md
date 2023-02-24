@@ -298,3 +298,17 @@ Pattern:
 
 Example:
 - <kbd>Vjd</kbd> - delete two lines
+
+# EDITOR
+
+## splits and 
+- `sp {path}` - open a file in horizontal split
+- `vsp {path}` - open a file in vertical split
+- <kbd>Ctrl</kbd>+<kbd>W</kbd> s - open horizontal split
+- <kbd>Ctrl</kbd>+<kbd>W</kbd> v - open vertical split
+
+## tabs
+- `:tabnew {file}` - open a file in a new tab
+- `:tabn[ext]` - go to the next tab
+- `:tabp[revious]` - go to the previous tab
+- `:tabo` - close all other tabs

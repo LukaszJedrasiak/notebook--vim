@@ -91,7 +91,7 @@ Examples:
 
 ### substitute
 Pattern:
-`:[range]s/{pattern}/{substitute}/{flags}
+`:[range]s/{pattern}/{substitute}/{flags}`
 
 - `:s/{old}/{new}` - replace the first occurence in line of {old} phrase by {new}
 - `:s/{old}/{new}/g` - replace all occurences in line of {old} phrase by {new}
@@ -272,6 +272,20 @@ Examples:
 
 Example:
 - `:!ls` - list the current directory content
+
+## surroundings (only in VSC)
+
+Pattern:
+`{command}s{count}{motion}` - do sth with surroundings:
+- <kbd>ds</kbd> - delete surroundings
+- <kbd>cs</kbd> - change surroundings
+- <kbd>ys</kbd> - add surroundings
+
+Examples:
+- <kbd>ds'</kbd> - delete the surrounding `'`
+- <kbd>cs'"</kbd> - change the surrounding `'` for `"`
+- <kbd>yss"</kbd> - surround a sentence with `"`
+- <kbd>ysaptli/></kbd> - surround a paragraph with `<li>` tag
 
 # INSERT mode
 ## changes

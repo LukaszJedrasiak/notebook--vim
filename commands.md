@@ -315,7 +315,7 @@ Example:
 
 # EDITOR
 
-## splits and 
+## splits
 - `sp {path}` - open a file in horizontal split
 - `vsp {path}` - open a file in vertical split
 - <kbd>Ctrl</kbd>+<kbd>W</kbd> s - open horizontal split
@@ -326,3 +326,49 @@ Example:
 - `:tabn[ext]` - go to the next tab
 - `:tabp[revious]` - go to the previous tab
 - `:tabo` - close all other tabs
+
+## custom mappings
+
+### switching split windows
+
+`{
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "j"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "k"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"]
+    }]
+}`
+
+### tab handling
+
+`{
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Leader>", "t", "t"],
+      "commands": [":tabnew"]
+    },
+    {
+      "before": ["<Leader>", "t", "n"],
+      "commands": [":tabnext"]
+    },
+    {
+      "before": ["<Leader>", "t", "p"],
+      "commands": [":tabprev"]
+    },
+    {
+      "before": ["<Leader>", "t", "o"],
+      "commands": [":tabo"]
+    }]
+}`

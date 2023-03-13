@@ -372,3 +372,14 @@ Example:
       "commands": [":tabo"]
     }]
 }`
+
+## TO DO
+- <kbd>gd</kbd> - go to definition (of the word under cursor)
+- <kbd>gf</kbd> - go to file (for file under the cursor)
+- <kbd>></kbd> - shift right
+- <kbd><</kbd> - shift left
+- <kbd>=</kbd> - format
+- <kbd>g~~</kbd> - switch case of a line
+- <kbd>>></kbd> - switch line right
+- <kbd><<</kbd> - switch line left
+- <kbd>==</kbd> - format line
